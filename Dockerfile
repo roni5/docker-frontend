@@ -17,5 +17,6 @@ RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-buil
 RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /etc/profile
 
 #RUN apk del git gcc g++ make
+RUN rm -rf /tmp/*
 
 #RUN gem install bundler --no-ri --no-rdoc

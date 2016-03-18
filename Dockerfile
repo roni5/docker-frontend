@@ -2,10 +2,18 @@ FROM mhart/alpine-node
 
 MAINTAINER Andy Postnikov
 
-RUN apk add --no-cache ruby ruby-bundler \
-  ruby-irb ruby-rake ruby-io-console ruby-bigdecimal \
-  libstdc++ tzdata
+RUN apk add --no-cache \
+  libstdc++ tzdata \
+  git gcc g++ make bash
 
-RUN npm install gulp -g
+#RUN npm install gulp -g
 
-RUN gem install bundler --no-ri --no-rdoc
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+
+RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /etc/profile.d/rbenv
+
+#RUN apk del git gcc g++ make
+
+#RUN gem install bundler --no-ri --no-rdoc

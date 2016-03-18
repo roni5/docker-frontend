@@ -3,8 +3,9 @@ FROM mhart/alpine-node
 MAINTAINER Andy Postnikov
 
 RUN apk add --no-cache \
-  libstdc++ tzdata \
-  git gcc g++ make bash
+  libstdc++ tzdata bash \
+  git gcc g++ make \
+  openssl-dev readline-dev zlib-dev
 
 #RUN npm install gulp -g
 

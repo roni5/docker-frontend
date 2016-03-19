@@ -25,6 +25,7 @@ RUN ln -s $(rbenv which gem) /usr/local/bin/gem
 RUN ln -s $(rbenv which ruby) /usr/local/bin/ruby
 
 RUN gem install bundler --no-ri --no-rdoc
+RUN ln -s $(rbenv which bundle) /usr/local/bin/bundle
 
 RUN npm install gulp -g
 

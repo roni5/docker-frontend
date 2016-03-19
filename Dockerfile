@@ -7,16 +7,22 @@ RUN apk add --no-cache \
   git gcc g++ make \
   openssl-dev readline-dev zlib-dev
 
-#RUN npm install gulp -g
+RUN git clone https://github.com/rbenv/rbenv.git /usr/local/rbenv \
+  && cd /usr/local/rbenv && src/configure && make -C src
 
-RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv \
-  && cd ~/.rbenv && src/configure && make -C src
+RUN git clone https://github.com/rbenv/ruby-build.git /usr/local/rbenv/plugins/ruby-build
 
-RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+ENV PATH /usr/local/rbenv/bin:$PATH
+RUN /usr/local/rbenv/plugins/ruby-build/install.sh
 
-RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> /etc/profile
+RUN rbenv install 2.1.8
 
 #RUN apk del git gcc g++ make
 RUN rm -rf /tmp/*
 
+#RUN npm install gulp -g
+
 #RUN gem install bundler --no-ri --no-rdoc
+
+VOLUME /work
+WORKDIR /work

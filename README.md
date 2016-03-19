@@ -1,7 +1,12 @@
-User this to build local container
+Build local container
 
-`docker build -t d-front .`
+`docker build -t front .`
 
-`alias n='docker run --rm -t -v $(pwd):/work -w /work nn '`
+Then add shell alias
 
-and then `n bundler install`
+`alias n='docker run --rm -it -v $(pwd):/work -w /work front '`
+
+Finally use for build
+
+`cd your-theme-folder`
+`n gulp`

@@ -20,9 +20,13 @@ RUN rbenv install 2.1.8
 #RUN apk del git gcc g++ make
 RUN rm -rf /tmp/*
 
-#RUN npm install gulp -g
+RUN rbenv global 2.1.8
+RUN ln -s $(rbenv which gem) /usr/local/bin/gem
+RUN ln -s $(rbenv which ruby) /usr/local/bin/ruby
 
-#RUN gem install bundler --no-ri --no-rdoc
+RUN gem install bundler --no-ri --no-rdoc
+
+RUN npm install gulp -g
 
 VOLUME /work
 WORKDIR /work

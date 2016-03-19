@@ -8,5 +8,6 @@ Then add shell alias
 
 Finally use for build
 
-`cd your-theme-folder`
-`n gulp`
+`cd your-theme-folder` && `n gulp`
+
+TODO Files are created by root user in container, needs to `chown` to your local user.

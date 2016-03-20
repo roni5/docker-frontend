@@ -20,7 +20,8 @@ RUN apk add --no-cache \
   && rbenv global ${RUBY_VERSION} \
   && ln -s $(rbenv which ruby) /usr/local/bin/ruby \
   && ln -s $(rbenv which gem) /usr/local/bin/gem \
-  && gem install bundler compass scss_lint --no-ri --no-rdoc \
+  && gem install breakpoint bundler compass compass-normalize compass-rgbapng \
+  scss_lint toolkit sass-globbing singularitygs susy --no-ri --no-rdoc \
   && ln -s $(rbenv which bundle) /usr/local/bin/bundle \
   && ln -s $(rbenv which compass) /usr/local/bin/compass \
   && ln -s $(rbenv which scss-lint) /usr/local/bin/scss-lint \

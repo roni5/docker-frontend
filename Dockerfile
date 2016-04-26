@@ -11,6 +11,7 @@ VOLUME /work
 WORKDIR /work
 
 COPY omega_4_4/* /work/omega_4_4/
+COPY omega_4_3/* /work/omega_4_3/
 
 
 RUN apk add --no-cache \
@@ -38,6 +39,8 @@ RUN apk add --no-cache \
   openssl-dev readline-dev zlib-dev \
   && rm -rf /tmp/*
 
+#RUN  cd /work/omega_4_3 \
+#  && bundle install
 
 # TODO add gemset management
 # https://gist.github.com/MicahElliott/2407918#enable-rvm-style-gemsets-optional

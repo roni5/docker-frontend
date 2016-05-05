@@ -31,6 +31,7 @@ Old version of omega has issue with ruby 2.1.8.
 
 
 1) you need to change version of ffi gem in Gemfile.lock to 1.9.6
+
 2) comment this line "RUN bower install --allow-root"
 
 

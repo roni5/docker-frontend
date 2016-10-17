@@ -4,11 +4,13 @@
 rm -rf node_modules
 
 /usr/bin/npm link \
+  bower \
   breakpoint-sass \
   browser-sync \
   chroma-sass \
   del \
   eslint \
+  event-stream \
   gulp \
   gulp-autoprefixer \
   gulp-eslint \
@@ -20,6 +22,7 @@ rm -rf node_modules
   gulp-sass-lint \
   gulp-size \
   gulp-sourcemaps \
+  gulp.spritesmith \
   kss \
   node-sass-import-once \
   sass-lint \

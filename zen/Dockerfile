@@ -2,12 +2,15 @@ FROM skilldlabs/frontend:latest
 
 MAINTAINER Andy Postnikov
 
-RUN npm install -g \
+RUN apk add --no-cache git \
+  && npm install -g \
+  bower \
   breakpoint-sass \
   browser-sync \
   chroma-sass \
   del \
   eslint \
+  event-stream \
   gulp-autoprefixer \
   gulp-eslint \
   gulp-if \
@@ -17,6 +20,7 @@ RUN npm install -g \
   gulp-sass-lint \
   gulp-size \
   gulp-sourcemaps \
+  gulp.spritesmith \
   kss \
   node-sass-import-once \
   sass-lint \

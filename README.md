@@ -50,11 +50,12 @@ Gulp watch will not reload browser in this case cause of ports issue(localhost r
 For old projects managed with ruby and gems use tag omega_4_3 (for compass 0.12) and omega_4_4 (for compass 1+)̨.
 For 4_3:
 ``` bash
-docker build -t omega_4_3 omega_4_3
-alias omega_4_3='docker run --rm -it -v $(pwd):/work omega_4_3 '
+alias omega_4_3='docker run --rm -it -v $(pwd):/work skilldlabs/frontend:omega_4_3 '
 ```
 then go to theme folder and run:
 ``` bash
 omega_4_3
 ```
 it will execute "compass compile -e production -s compact"
+Or you can use "omega_4_3 compass watch" etc.
+Same for 4_4

@@ -1,5 +1,15 @@
 FROM ruby:2.1-alpine
-MAINTAINER Andy Postnikov
+
+ARG BUILD_DATE
+ARG VCS_REF
+
+LABEL org.label-schema.build-date=$BUILD_DATE \
+  org.label-schema.vcs-ref=$VCS_REF \
+  org.label-schema.schema-version="1.0" \
+  org.label-schema.name="docker-gulp" \
+  org.label-schema.description="Omega 7.x-4.4 theme for Drupal - npm, gulp, bower & libsass" \
+  org.label-schema.vcs-url="https://github.com/skilld-labs/docker-frontend" \
+  maintainer="Andy Postnikov <andypost@ya.ru>"
 
 ENV BUILD_PACKAGES bash curl-dev ruby-dev build-base
 

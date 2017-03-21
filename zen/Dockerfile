@@ -2,9 +2,7 @@ FROM skilldlabs/frontend:latest
 
 MAINTAINER Andy Postnikov
 
-RUN apk add --no-cache git \
-  && npm install -g \
-  bower \
+ENV NPM_PACKAGES "bower \
   breakpoint-sass \
   browser-sync \
   chroma-sass \
@@ -26,6 +24,9 @@ RUN apk add --no-cache git \
   sass-lint \
   support-for \
   typey \
-  zen-grids
+  zen-grids"
+
+RUN apk add --no-cache git \
+  && npm install -g $NPM_PACKAGES
 
 COPY docker-entrypoint.sh /usr/bin/

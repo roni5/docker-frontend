@@ -1,8 +1,6 @@
 #!/bin/sh
 
-# prevent conflicts with existing
-rm -rf node_modules
-
-/usr/bin/npm link gulp gulp-sass $NPM_PACKAGES
+yarn install --check-files --ignore-optional --ignore-platform --cache-folder /opt/.yarn-cache
+export PATH="$PATH:`yarn global bin`"
 
 exec "$@"

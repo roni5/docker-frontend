@@ -10,6 +10,7 @@ ENV NPM_PACKAGES "bower \
   eslint \
   event-stream \
   gulp-autoprefixer \
+  gulp-cached \
   gulp-eslint \
   gulp-if \
   gulp-load-plugins \
@@ -21,6 +22,7 @@ ENV NPM_PACKAGES "bower \
   gulp.spritesmith \
   kss \
   node-sass-import-once \
+  glob \
   sass-lint \
   support-for \
   typey \

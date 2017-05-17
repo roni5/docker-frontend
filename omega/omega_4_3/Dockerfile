@@ -1,5 +1,5 @@
 FROM ruby:2.1-alpine
-MAINTAINER Andy Postnikov
+MAINTAINER Roni McGuinness
 
 ENV BUILD_PACKAGES bash curl-dev ruby-dev build-base
 
@@ -17,6 +17,6 @@ COPY Gemfile.lock /usr/app/
 WORKDIR /usr/app
 RUN bundle install
 
-WORKDIR /work
+WORKDIR /shopwiz
 
 CMD ["compass", "compile", "-e", "production", "-s", "compact"]

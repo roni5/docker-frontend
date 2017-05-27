@@ -1,5 +1,5 @@
 FROM ruby:2.1-alpine
-MAINTAINER Andy Postnikov
+MAINTAINER Roni Mac
 
 ENV BUILD_PACKAGES bash curl-dev ruby-dev build-base
 
